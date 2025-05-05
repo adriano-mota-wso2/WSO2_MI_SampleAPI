@@ -1,2 +1,2 @@
-# wso2_mi_sampleapi
+# WSO2MI_APIs
 Sample API for Mock
