@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/changepayload" name="ChangePayload" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/">
+        <inSequence>
+            <log category="INFO">
+                <message>Received JSON payload: ${payload}</message>
+            </log>
+            <payloadFactory media-type="xml">
+                <format>
+                    <root xmlns="">
+                        <data>${payload}</data>
+                    </root>
+                </format>
+            </payloadFactory>
+            <log category="INFO">
+                <message>Transformed to XML format</message>
+            </log>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+            <log category="ERROR">
+                <message>Error occurred during payload transformation: ${props.synapse.ERROR_MESSAGE}</message>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{"error": "Failed to transform payload to XML"}</format>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>
