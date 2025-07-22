@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/changepayload" name="ChangePayload" xmlns="http://ws.apache.org/ns/synapse">
+<api name="ChangePayload" statistics="enable" trace="enable" context="/changepayload" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST" uri-template="/">
         <inSequence>
             <log category="INFO">

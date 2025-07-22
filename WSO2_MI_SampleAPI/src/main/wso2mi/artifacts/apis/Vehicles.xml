@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/vehicles" name="Vehicles" xmlns="http://ws.apache.org/ns/synapse">
+<api name="Vehicles" statistics="enable" trace="enable" context="/Vehicles" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/motorcycles">
         <inSequence>
             <payloadFactory media-type="json">
@@ -17,7 +17,8 @@
                     {"model": "Monkey", "year": "2023", "engine": "125cc Single-Cylinder", "displacement": "125", "category": "Mini", "price": "4199"},
                     {"model": "Super Cub C125", "year": "2023", "engine": "125cc Single-Cylinder", "displacement": "125", "category": "Scooter", "price": "3899"}
                     ]
-                    }</format>
+                    }
+                </format>
                 <args/>
             </payloadFactory>
             <log category="INFO" logMessageID="true" logFullPayload="true">
@@ -50,7 +51,8 @@
                     {"model": "HR-V", "year": 2023, "trim": "EX", "engine": "2.0L I4", "horsepower": 158, "fuel_economy": "26/32 mpg (city/highway)", "price": 26450, "body_type": "SUV"},
                     {"model": "Clarity", "year": 2022, "trim": "Touring", "engine": "Electric", "horsepower": 181, "fuel_economy": "118 MPGe (combined)", "price": 47900, "body_type": "Sedan"}
                     ]
-                    }</format>
+                    }
+                </format>
                 <args/>
             </payloadFactory>
             <log category="INFO" logMessageID="true" logFullPayload="true">
